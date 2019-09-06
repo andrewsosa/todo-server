@@ -1,0 +1,29 @@
+{
+  "name": "@andrewsosa/todo-server",
+  "version": "1.0.0",
+  "author": "andrewsosa",
+  "license": "MIT",
+  "scripts": {
+    "dev": "micro-dev src/server.js"
+  },
+  "bin": "server.js",
+  "devDependencies": {
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.2.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "micro-dev": "^3.0.0",
+    "prettier": "^1.18.2"
+  },
+  "dependencies": {
+    "boxen": "^4.1.0",
+    "chalk": "^2.4.2",
+    "get-port": "^5.0.0",
+    "micro": "^9.3.4",
+    "micro-morgan": "^0.1.0"
+  }
+}

@@ -6,23 +6,25 @@ const getPort = require("get-port");
 const micro = require("micro");
 const morgan = require("micro-morgan");
 
-const app = require("./src/app");
-
-(async () => {
+const serve = async app => {
+  const server = morgan("dev")(app);
   const port = await getPort({ port: getPort.makeRange(3000, 3100) });
 
-  micro(morgan("dev")(app)).listen(port, () => {
-    // let message = chalk.green(`Listening at http://localhost:${port}`);
-    let message = `${chalk.bold("todo-server")} ${chalk.green("is running!")}`;
-    message += "\n\n";
-    // message += chalk.gray(`• ${chalk.bold("Local:")} http://localhost:${port}`);
-    message += chalk.gray(`• Local: http://localhost:${port}`);
+  micro(server).listen(port, () => {
+    const message =
+      // eslint-disable-next-line prefer-template
+      `${chalk.bold("todo-server")} ${chalk.green("is running!")}` +
+      "\n\n" +
+      chalk.gray(`• Local: http://localhost:${port}`);
 
-    const box = boxen(message, {
-      padding: 1,
-      borderColor: "green",
-      margin: 1,
-    });
-    console.log(box);
+    console.log(
+      boxen(message, {
+        padding: 1,
+        borderColor: "green",
+        margin: 1,
+      })
+    );
   });
-})();
+};
+
+serve(require("./src/app"));

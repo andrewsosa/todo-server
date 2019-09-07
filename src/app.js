@@ -27,7 +27,7 @@ module.exports = handlers({
   patch: async (req, res) => {
     const { id, done } = await json(req);
     const pos = toDos.findIndex(el => el.id === id);
-    if (pos) {
+    if (pos > -1) {
       toDos[pos].done = done.toLowerCase() === "true";
       return send(res, 202, toDos[pos]);
     }
@@ -36,7 +36,7 @@ module.exports = handlers({
   delete: async (req, res) => {
     const { id } = await json(req);
     const pos = toDos.findIndex(el => el.id === id);
-    if (pos) {
+    if (pos > -1) {
       toDos.splice(pos, 1);
       return send(res, 202);
     }

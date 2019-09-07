@@ -2,6 +2,10 @@
   "name": "@andrewsosa/todo-server",
   "version": "1.0.1",
   "author": "andrewsosa",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:andrewsosa/todo-server.git"
+  },
   "license": "MIT",
   "scripts": {
     "dev": "micro-dev src/server.js",

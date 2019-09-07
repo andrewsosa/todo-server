@@ -4,7 +4,8 @@
   "author": "andrewsosa",
   "license": "MIT",
   "scripts": {
-    "dev": "micro-dev src/server.js"
+    "dev": "micro-dev src/server.js",
+    "prepublish": "git push"
   },
   "bin": "server.js",
   "devDependencies": {
